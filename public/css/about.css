@@ -1,0 +1,171 @@
+/**
+ * Styling khusus halaman About — palet warna lebih hidup (CSS biasa).
+ */
+
+.about-page {
+    --about-violet: #6d28d9;
+    --about-fuchsia: #c026d3;
+    --about-cyan: #0891b2;
+    --about-amber: #d97706;
+    --about-rose: #e11d48;
+    --about-indigo: #4338ca;
+
+    max-width: 38rem;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #fef7ff 0%, #f0f9ff 45%, #fffbeb 100%);
+    border: 1px solid rgba(192, 38, 211, 0.15);
+    box-shadow: 0 4px 24px rgba(109, 40, 217, 0.08);
+}
+
+.about-header {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+}
+
+.about-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--about-violet), var(--about-fuchsia), var(--about-cyan), var(--about-amber));
+}
+
+.about-title {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(120deg, var(--about-violet), var(--about-fuchsia), var(--about-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-role {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: #57534e;
+}
+
+.about-role strong {
+    color: var(--about-indigo);
+    font-weight: 700;
+}
+
+.about-intro {
+    margin: 0 0 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #44403c;
+    padding: 1rem 1.15rem;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 0.65rem;
+    border-left: 4px solid var(--about-cyan);
+    box-shadow: 0 2px 12px rgba(8, 145, 178, 0.12);
+}
+
+.about-intro code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.8125rem;
+    background: linear-gradient(180deg, #ede9fe, #e0e7ff);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.35rem;
+    color: var(--about-violet);
+    border: 1px solid rgba(109, 40, 217, 0.2);
+}
+
+.about-skills {
+    background: linear-gradient(160deg, #fff 0%, #fdf4ff 40%, #ecfeff 100%);
+    border: 2px solid rgba(192, 38, 211, 0.25);
+    border-radius: 1rem;
+    padding: 1.35rem 1.5rem 1.35rem 1.35rem;
+    margin-bottom: 1.25rem;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+        0 8px 28px rgba(192, 38, 211, 0.12);
+}
+
+.about-skills h2 {
+    margin: 0 0 1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--about-fuchsia);
+}
+
+.about-skills ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-skills li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+    color: #292524;
+    line-height: 1.5;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(8, 145, 178, 0.15);
+}
+
+.about-skills li:last-child {
+    margin-bottom: 0;
+}
+
+.about-skills li::before {
+    content: '';
+    position: absolute;
+    left: 0.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--about-violet), var(--about-rose));
+    box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.25);
+}
+
+.about-skills li:nth-child(4n + 1)::before {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+}
+
+.about-skills li:nth-child(4n + 2)::before {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+}
+
+.about-skills li:nth-child(4n + 3)::before {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.about-skills li:nth-child(4n + 4)::before {
+    background: linear-gradient(135deg, #db2777, #f43f5e);
+}
+
+.about-footer {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #78716c;
+    padding: 0.75rem 1rem;
+    background: rgba(254, 243, 199, 0.5);
+    border-radius: 0.5rem;
+    border: 1px dashed rgba(217, 119, 6, 0.35);
+}
+
+.about-footer code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    background: #fff7ed;
+    color: var(--about-amber);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+}
