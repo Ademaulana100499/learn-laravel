@@ -1,0 +1,41 @@
+/**
+ * Navbar — seluruhnya CSS biasa (tanpa Tailwind di markup nav).
+ * Dimuat setelah @stack('styles') agar tetap menang atas Bootstrap Reboot di halaman Contact.
+ */
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin: 0 0 2.5rem;
+    padding: 0 0 1.5rem;
+    border-bottom: 1px solid #e4e4e7;
+    list-style: none;
+}
+
+.site-nav__link {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    line-height: 1.25;
+}
+
+.site-nav__link--primary {
+    color: #2563eb !important;
+}
+
+.site-nav__link--primary:hover,
+.site-nav__link--primary:focus {
+    color: #1e40af !important;
+    text-decoration: underline !important;
+}
+
+.site-nav__link--muted {
+    color: #71717a !important;
+}
+
+.site-nav__link--muted:hover,
+.site-nav__link--muted:focus {
+    color: #27272a !important;
+    text-decoration: underline !important;
+}

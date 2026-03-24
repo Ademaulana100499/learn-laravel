@@ -26,6 +26,7 @@ Tanpa Vite jalan dan tanpa build, layout tetap memakai **CSS fallback** kecil ag
 
 - **About** — CSS biasa terpisah: `public/css/about.css`, dimuat lewat `@push('styles')` + `asset('css/about.css')`.
 - **Contact** — **Bootstrap 5** lewat CDN (CSS + JS bundle), juga lewat `@push('styles')` / `@push('scripts')` di `contact.blade.php`. Nav/layout luar tetap Tailwind/fallback.
+- **Nav** — `public/css/navigation.css` (CSS biasa saja, tanpa class Tailwind di komponen). Dimuat **setelah** `@stack('styles')` supaya tetap konsisten di semua halaman (termasuk saat Bootstrap memuat Reboot).
 
 ---
 
