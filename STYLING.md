@@ -22,6 +22,11 @@ Project ini pakai **Vite** + **Tailwind CSS v4** (sama ekosistem tooling seperti
 
 Tanpa Vite jalan dan tanpa build, layout tetap memakai **CSS fallback** kecil agar halaman tidak polos.
 
+### Halaman khusus (contoh di project ini)
+
+- **About** — CSS biasa terpisah: `public/css/about.css`, dimuat lewat `@push('styles')` + `asset('css/about.css')`.
+- **Contact** — **Bootstrap 5** lewat CDN (CSS + JS bundle), juga lewat `@push('styles')` / `@push('scripts')` di `contact.blade.php`. Nav/layout luar tetap Tailwind/fallback.
+
 ---
 
 ## Yang perlu kamu jalankan
