@@ -10,5 +10,5 @@
     @else
         <p>Mode debug: OFF.</p>
     @endif
-    <p><small>Contoh penggunaan <code>@if</code> dan data dari config.</small></p>
+    <p><small>Menampilkan nama direktif di teks: pakai <code>@@</code> di Blade (dua at) agar jadi satu at di HTML, atau pakai entity <code>&amp;#64;if</code> agar tampil sebagai <code>&#64;if</code> tanpa dieksekusi Blade.</small></p>
 @endsection
