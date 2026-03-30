@@ -1,30 +1,49 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 
-// --- Contoh dari materi Laravel Dasar ---
+/*
+|--------------------------------------------------------------------------
+| Auth (tamu saja — belum login)
+|--------------------------------------------------------------------------
+*/
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
 
-// 1. Route closure (tanpa controller) — seperti di 02-routing
-Route::get('/hello', function () {
-    return 'Hello World';
+    Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
 });
 
-// 2. Route ke view langsung
-Route::view('/info', 'info');
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-// 3. Route ke controller
-Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+/*
+|--------------------------------------------------------------------------
+| Halaman aplikasi — wajib login
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->group(function () {
+    Route::get('/', [PageController::class, 'home'])->name('home');
+    Route::get('/about', [PageController::class, 'about'])->name('about');
+    Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+    Route::get('/users/{id}', [PageController::class, 'showUser'])->name('users.show');
 
-// 4. Route dengan parameter dinamis (contoh: /users/5)
-Route::get('/users/{id}', [PageController::class, 'showUser'])->name('users.show');
+    Route::get('/hello', function () {
+        return 'Hello World';
+    });
 
-// 5. Contoh response JSON (API-style)
-Route::get('/api/hello', [PageController::class, 'apiHello']);
+    Route::view('/info', 'info');
 
-// Halaman default Laravel (opsional; bisa dihapus kalau sudah pakai home di atas)
+    Route::get('/api/hello', [PageController::class, 'apiHello']);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Publik (tanpa auth) — halaman default Laravel
+|--------------------------------------------------------------------------
+*/
 Route::get('/welcome', function () {
     return view('welcome');
 });

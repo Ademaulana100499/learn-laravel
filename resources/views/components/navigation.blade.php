@@ -8,4 +8,9 @@
     <a href="{{ route('contact') }}" class="site-nav__link site-nav__link--primary">Contact</a>
     <a href="{{ url('/hello') }}" class="site-nav__link site-nav__link--muted">/hello</a>
     <a href="{{ url('/api/hello') }}" class="site-nav__link site-nav__link--muted">/api/hello</a>
+
+    <form method="POST" action="{{ route('logout') }}" class="site-nav__logout">
+        @csrf
+        <button type="submit" class="site-nav__link site-nav__link--muted site-nav__logout-btn">Keluar</button>
+    </form>
 </nav>

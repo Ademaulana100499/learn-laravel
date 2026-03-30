@@ -6,11 +6,11 @@ Project ini pakai **Vite** + **Tailwind CSS v4** (sama ekosistem tooling seperti
 
 ## Perbandingan singkat dengan Next.js
 
-| Next.js | Laravel (setup ini) |
-|--------|----------------------|
-| `globals.css`, CSS Modules, Tailwind di JSX `className` | `resources/css/app.css`, class Tailwind di atribut HTML Blade `class` |
-| `npm run dev` (Next) | `npm run dev` (Vite) + **`php artisan serve`** (PHP) — biasanya **dua terminal** |
-| HMR untuk komponen React | Vite bisa hot-reload CSS/JS; **Blade** tetap perlu refresh halaman (atau Vite `refresh: true` membantu reload saat file `.blade.php` berubah saat dev server jalan) |
+| Next.js                                                 | Laravel (setup ini)                                                                                                                                                 |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `globals.css`, CSS Modules, Tailwind di JSX `className` | `resources/css/app.css`, class Tailwind di atribut HTML Blade `class`                                                                                               |
+| `npm run dev` (Next)                                    | `npm run dev` (Vite) + **`php artisan serve`** (PHP) — biasanya **dua terminal**                                                                                    |
+| HMR untuk komponen React                                | Vite bisa hot-reload CSS/JS; **Blade** tetap perlu refresh halaman (atau Vite `refresh: true` membantu reload saat file `.blade.php` berubah saat dev server jalan) |
 
 ---
 
